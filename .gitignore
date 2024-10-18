@@ -1,0 +1,17 @@
+.idea/
+
+/client-fx/target/
+!client-fx/.mvn/wrapper/maven-wrapper.jar
+
+/rest-api/.mvn/
+/rest-api/target/
+!rest-api/.mvn/wrapper/maven-wrapper.jar
+
+# Angular
+/client-ang/.vscode/
+/client-ang/node_modules/
+/client-ang/dist/
+/client-ang/tmp/
+/client-ang/npm-debug.log
+/client-ang/yarn-error.log
+/client-ang/.idea/
