@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import java.lang.Double?>
+
+<AnchorPane layoutX="5.0" layoutY="5.0"
+            prefHeight="850.0" prefWidth="1000.0"
+            style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/15.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mint.clientfx.controller.CalendarController">
+
+    <fx:define>
+
+        <Double fx:id="dropHBoxLayoutX" fx:value="50.0" />
+        <Double fx:id="dropHBoxLayoutY" fx:value="20.0" />
+        <Double fx:id="dropHBoxHeight" fx:value="50.0" />
+        <Double fx:id="dropHBoxWidth" fx:value="900.0" />
+
+
+        <Double fx:id="pageHBoxLayoutX" fx:value="50.0" />
+        <Double fx:id="pageHBoxLayoutY" fx:value="70.0" />
+        <Double fx:id="pageHBoxHeight" fx:value="50.0" />
+        <Double fx:id="pageHBoxWidth" fx:value="900.0" />
+
+        <Double fx:id="headerHBoxLayoutX" fx:value="50.0" />
+        <Double fx:id="headerHBoxLayoutY" fx:value="130.0" />
+        <Double fx:id="headerHBoxHeight" fx:value="50.0" />
+        <Double fx:id="headerHBoxWidth" fx:value="900.0" />
+
+        <Double fx:id="flowPaneLayoutX" fx:value="50.0" />
+        <Double fx:id="flowPaneLayoutY" fx:value="180.0" />
+        <Double fx:id="flowPaneHeight" fx:value="650.0" />
+        <Double fx:id="flowPaneWidth" fx:value="900.0" />
+    </fx:define>
+
+    <HBox id="page" alignment="CENTER" style="-fx-font-size: 16; -fx-background-color: lightgreen"
+          layoutX="$dropHBoxLayoutX" layoutY="$dropHBoxLayoutY"
+          prefHeight="$dropHBoxHeight" prefWidth="$dropHBoxWidth" spacing="5.0">
+        <HBox alignment="CENTER_LEFT"> <ComboBox fx:id="instructorCombobox" /> </HBox>
+        <HBox alignment="CENTER_LEFT"> <Text fx:id="overallDurationLabel" strokeType="OUTSIDE" /> </HBox>
+    </HBox>
+
+
+    <HBox id="page" alignment="CENTER" style="-fx-font-size: 16; -fx-background-color: lightblue"
+          layoutX="$pageHBoxLayoutX" layoutY="$pageHBoxLayoutY"
+          prefHeight="$pageHBoxHeight" prefWidth="$pageHBoxWidth" spacing="5.0">
+
+        <Button mnemonicParsing="false" onAction="#previousMonth" text="&lt;"/>
+        <Text fx:id="yearLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="####">
+            <font>
+                <Font size="22.0"/>
+            </font>
+        </Text>
+        <Text fx:id="monthLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="####">
+            <font>
+                <Font size="22.0"/>
+            </font>
+        </Text>
+        <Button mnemonicParsing="false" onAction="#nextMonth" text="&gt;"/>
+    </HBox>
+
+    <HBox id="header" alignment="CENTER" style="-fx-font-size: 15"
+          layoutX="$headerHBoxLayoutX" layoutY="$headerHBoxLayoutY"
+          prefHeight="$headerHBoxHeight" prefWidth="$headerHBoxWidth" spacing="110.0">
+        <padding>
+            <Insets right="9.0"/>
+        </padding>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mo" textAlignment="CENTER"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tu" textAlignment="CENTER"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="We" textAlignment="CENTER"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Th" textAlignment="CENTER"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fr" textAlignment="CENTER"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sa" textAlignment="CENTER"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Su" textAlignment="CENTER"/>
+    </HBox>
+
+    <FlowPane fx:id="calendarViewPane" hgap="10.0" vgap="10.0"
+              layoutX="$flowPaneLayoutX" layoutY="$flowPaneLayoutY"
+              prefHeight="$flowPaneHeight" prefWidth="$flowPaneWidth" />
+
+</AnchorPane>
